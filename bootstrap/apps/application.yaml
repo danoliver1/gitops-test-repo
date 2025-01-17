@@ -1,18 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istiod
+  name: apps
+  namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://istio-release.storage.googleapis.com/charts
-    targetRevision: 1.23.4
-    chart: istiod
+    repoURL: https://github.com/danoliver1/gitops-test-repo.git
+    targetRevision: HEAD
+    path: charts/apps
     helm:
-      valuesObject: {} # Istiod values here
+      valueFiles:
+        - ../../clusters/$CLUSTER_NAME.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: istio-system
+    namespace: argocd
   syncPolicy:
     automated:
       prune: true

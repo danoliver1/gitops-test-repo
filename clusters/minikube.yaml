@@ -1,0 +1,7 @@
+labels:
+  environment: minikube
+  owner: team-minikube
+
+apps:
+  istio:
+    enabled: true

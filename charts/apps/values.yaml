@@ -1,0 +1,9 @@
+labels:
+  environment: base
+  team: base-team
+
+apps:
+  istio:
+    enabled: true
+    version: 1.23.4
+
