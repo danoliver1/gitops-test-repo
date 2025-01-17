@@ -8,10 +8,13 @@ The intention of this repo is to come up with a folder structure which allows fo
 - dev/prod defaults for each helm chart
 - overrides at cluster level
 
-## Using ArgoCD CLI (macos)
+## Using ArgoCD CLI
+
+See https://argo-cd.readthedocs.io/en/latest/cli_installation/ for installation instructions.
+
+The default namespace needs to be `argocd` for the cli to work
 
 ```bash
-brew install argocd
 kubectl config set-context --current --namespace=argocd
 argocd app list
 ```
