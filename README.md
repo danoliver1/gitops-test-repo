@@ -7,3 +7,11 @@ The intention of this repo is to come up with a folder structure which allows fo
 
 - dev/prod defaults for each helm chart
 - overrides at cluster level
+
+## Using ArgoCD CLI (macos)
+
+```bash
+brew install argocd
+kubectl config set-context --current --namespace=argocd
+argocd app list
+```
